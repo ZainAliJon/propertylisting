@@ -1,7 +1,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+            <span>Copyright &copy;AutoCrone.com 2024</span>
         </div>
     </div>
 </footer>
@@ -43,6 +43,14 @@ aria-hidden="true">
 
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('/dashboard/vendor/jquery/jquery.min.js')}}"></script>
+{{-- <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+{{-- <script src="https://cdn.datatables.net/autofill/2.6.0/js/dataTables.autoFill.min.js"></script> --}}
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+
 <script src="{{asset('/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 <!-- Core plugin JavaScript-->
@@ -50,6 +58,13 @@ aria-hidden="true">
 
 <!-- Custom scripts for all pages-->
 <script src="{{asset('/dashboard/js/sb-admin-2.min.js')}}"></script>
+<script>
+  $(document).ready( function () {
+    $('#example22').DataTable( {
+    	buttons: [ 'csv', 'excel', 'pdf', 'print' ]
+    } );
+} );
+</script>
 
 </body>
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Listing;
 use App\Models\Building;
 use Illuminate\Http\Request;
-
+use PDF;
 class ListingController extends Controller
 {
     /**
@@ -116,5 +116,26 @@ class ListingController extends Controller
     {
         $Listing = Listing::find($id)->delete();
         return redirect()->back();
+    }
+    
+    public function pdf(){
+        $listings = Listing::with('building.location')->get()->toArray();
+        // dd($listings);
+        return view('listings.pdf', compact('listings'));
+    }
+    public function downlaod_pdf(Request $request){
+        // dd($request->all());
+        $data = $request->checkbox;
+        // dd($data);
+        $listings = Listing::with('building.location')
+        ->whereIn('id', $data) // Use whereIn to filter by matching IDs
+        ->get()
+        ->toArray();
+        $data['listings'] = $listings;
+        $pdf = PDF::loadView('listings.pdf', $data)->setOptions(['defaultFont' => 'sans-serif']);
+
+        return $pdf->stream('listings.pdf');
+        // return view('listings.pdf', compact('listings'));
+        // return $pdf->download('listings.pdf');
     }
 }

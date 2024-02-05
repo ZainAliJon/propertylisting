@@ -41,13 +41,14 @@ Route::middleware('auth')->group(function () {
         Route::post('/building/store', [\App\Http\Controllers\BuildingController::class, 'store'])->name('building.store');
         Route::get('/building/delete/{id}', [\App\Http\Controllers\BuildingController::class, 'destroy']);
         // listings
-        Route::get('/listings', [\App\Http\Controllers\ListingController::class, 'index'])->name('building.index');
+        Route::get('/listings', [\App\Http\Controllers\ListingController::class, 'index'])->name('listing.index');
+        Route::get('/listings/pdf', [\App\Http\Controllers\ListingController::class, 'pdf'])->name('listing.pdf');
         Route::get('/listing/create', [\App\Http\Controllers\ListingController::class, 'create'])->name('listing.create');
         Route::get('/listing/edit/{id}', [\App\Http\Controllers\ListingController::class, 'edit'])->name('listing.edit');
         Route::post('/listing/edit/{id}', [\App\Http\Controllers\ListingController::class, 'update'])->name('listing.update');
         Route::post('/listing/store', [\App\Http\Controllers\ListingController::class, 'store'])->name('listing.store');
         Route::get('/listing/delete/{id}', [\App\Http\Controllers\ListingController::class, 'destroy']);
-        
+        Route::post('/listing/pdf_downlaod', [\App\Http\Controllers\ListingController::class, 'downlaod_pdf']);
 });
 
 require __DIR__.'/auth.php';

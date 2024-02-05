@@ -21,7 +21,7 @@
                 </div>
             </div>
         </form>
-        
+        {{-- @dd('') --}}
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
             
@@ -85,7 +85,7 @@
                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
             </a>
             <!-- Dropdown - User Information -->
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in show" aria-labelledby="userDropdown">
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
