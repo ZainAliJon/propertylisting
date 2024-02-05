@@ -126,15 +126,19 @@ class ListingController extends Controller
     public function downlaod_pdf(Request $request){
         // dd($request->all());
         $data = $request->checkbox;
-        // dd($data);
-        $listings = Listing::with('building.location')
-        ->whereIn('id', $data) // Use whereIn to filter by matching IDs
-        ->get()
-        ->toArray();
+        if($data == null){
+            $listings = Listing::with('building.location')->get()->toArray();
+        }else{
+
+            $listings = Listing::with('building.location')
+            ->whereIn('id', $data) 
+            ->get()
+            ->toArray();
+        }
         $data['listings'] = $listings;
         $pdf = PDF::loadView('listings.pdf', $data)->setOptions(['defaultFont' => 'sans-serif']);
 
-        return $pdf->stream('listings.pdf');
+        return $pdf->download('listings.pdf');
         // return view('listings.pdf', compact('listings'));
         // return $pdf->download('listings.pdf');
     }
