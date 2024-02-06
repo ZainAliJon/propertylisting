@@ -115,9 +115,13 @@
         </div>
         <div class="" style="display: block;">
             <div class="col-6 text-center" style="display: inline-block;width:45%;">Address</div>
-            <div class="col-6 text-left" style="display: inline-block;width:45%;">:{{$list['building']['address']}}</div>
+            <div class="col-6 text-left" style="display: inline-block;width:45%;">: {{$list['building']['address']}}</div>
             <div class="col-6 text-center" style="display: inline-block;width:45%;">Building Size</div>
-            <div class="col-6 text-left" style="display: inline-block;width:45%;">:{{$list['size']}}</div>
+            <div class="col-6 text-left" style="display: inline-block;width:45%;">: {{$list['size']}}</div>
+            <div class="col-6 text-center" style="display: inline-block;width:45%;">Gross Rate per Square</div>
+            <div class="col-6 text-left" style="display: inline-block;width:45%;">: ${{$list['gross_rate_per_square']}}</div>
+            <div class="col-6 text-center" style="display: inline-block;width:45%;">Total </div>
+            <div class="col-6 text-left" style="display: inline-block;width:45%;">: ${{$list['total_price']}}</div>
         </div>
         <div class="w-40 card shadow mx-auto p-5 text-center mt-4" style="width: 40%;">
             <h3 class="text-center">{{$list['building']['name']}}</h3>
