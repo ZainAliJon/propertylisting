@@ -136,10 +136,10 @@ class ListingController extends Controller
             ->toArray();
         }
         $data['listings'] = $listings;
-        $pdf = PDF::loadView('listings.pdf', $data)->setOptions(['defaultFont' => 'sans-serif']);
-
-        return $pdf->download('listings.pdf');
         // return view('listings.pdf', compact('listings'));
+        $pdf = PDF::loadView('listings.pdf', $data);
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->stream('listings.pdf');
         // return $pdf->download('listings.pdf');
     }
 }

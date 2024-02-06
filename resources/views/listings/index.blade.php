@@ -39,7 +39,7 @@
                     @foreach($listings as $index => $listing)
                     <tr class="odd">
                         <td>
-                            <input type="checkbox" name="checkbox[]" value="{{$listing['id']}}">
+                            <input type="checkbox" checked name="checkbox[]" value="{{$listing['id']}}">
                         </td>
                         <td class="sorting_1">{{++$index}}</td>
                         <td colspan="1">
@@ -62,7 +62,6 @@
                                     <span class="icon text-white-50">
                                         <i class="fas fa-trash"></i>
                                     </span>
-                                    
                                 </a>
                             </div>
                         </td>
