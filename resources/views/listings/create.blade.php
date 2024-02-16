@@ -34,7 +34,7 @@
                 </div>
                 <div class="form-group col-6">
                     <label for="address">Condition: </label>
-                    <select name="condition" id="" class="form-control">
+                    <select name="condition" id="" class="form-control" required="">
                         <option value="">Select Condition</option>
                         <option @if(@$listing->condition == "Any") selected="" @endif value="Any">Any</option>
                         <option @if(@$listing->condition == "filtered") selected="" @endif  value="filtered">filtered</option>
@@ -43,15 +43,15 @@
                 </div>
                 <div class="form-group col-6">
                     <label for="address">Available date: </label>
-                    <input type="date" name="available_date" class="form-control" value="{{@$listing->available_date}}">
+                    <input required="" type="date" name="available_date" class="form-control" value="{{@$listing->available_date}}">
                 </div>
                 <div class="form-group col-6">
                     <label for="images">listing Images (you can select multiple images)</label>
-                    <input type="file" name="images[]" class="form-control" multiple>
+                    <input required="" type="file" name="images[]" class="form-control" multiple>
                 </div>
                 <div class="form-group col-6">
                     <label for="images">Floor Plan Images (you can select multiple images)</label>
-                    <input type="file" name="floor_plan_images[]" class="form-control" multiple>
+                    <input required="" type="file" name="floor_plan_images[]" class="form-control" multiple>
                 </div>
                 <div class="form-group d-flex col-12" style="gap:10px">
                     <a href="{{url('/buildings')}}" type="submit" class="btn btn-danger w-50"> <i class="fa fa-cancel"></i> Cancel</a>
